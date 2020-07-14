@@ -163,21 +163,21 @@ var Slider = /*#__PURE__*/function () {
     key: "moveSlides",
     value: function moveSlides() {
       this.sliderContainer.style.transform = "translateX(-".concat(this.currentSlide * this.slideSize, "px)");
+      Array.from(this.shortcuts.children).forEach(function (shortcut) {
+        return shortcut.classList.remove('active');
+      });
+      this.shortcuts.children[this.currentSlide].classList.add('active');
     }
   }, {
     key: "nextSlide",
     value: function nextSlide() {
-      this.shortcuts.children[this.currentSlide].classList.remove('active');
       this.currentSlide = this.currentSlide >= this.slides - 1 ? 0 : this.currentSlide + 1;
-      this.shortcuts.children[this.currentSlide].classList.add('active');
       this.moveSlides();
     }
   }, {
     key: "previousSlide",
     value: function previousSlide() {
-      this.shortcuts.children[this.currentSlide].classList.remove('active');
       this.currentSlide = this.currentSlide <= 0 ? this.slides - 1 : this.currentSlide - 1;
-      this.shortcuts.children[this.currentSlide].classList.add('active');
       this.moveSlides();
     }
   }, {
@@ -260,7 +260,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57772" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51355" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

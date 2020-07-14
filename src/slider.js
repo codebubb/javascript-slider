@@ -1,5 +1,4 @@
 export default class Slider {
-
     constructor({
         sliderSelector = '.slider',
         sliderContainerSelector = '.slider__container',
@@ -21,19 +20,17 @@ export default class Slider {
 
     moveSlides() {
         this.sliderContainer.style.transform = `translateX(-${this.currentSlide * this.slideSize}px)`;
+        Array.from(this.shortcuts.children).forEach(shortcut => shortcut.classList.remove('active'));
+        this.shortcuts.children[this.currentSlide].classList.add('active');
     };
 
     nextSlide() {
-        this.shortcuts.children[this.currentSlide].classList.remove('active');
         this.currentSlide = this.currentSlide >= this.slides - 1 ? 0 : this.currentSlide + 1;
-        this.shortcuts.children[this.currentSlide].classList.add('active');
         this.moveSlides();
     };
 
     previousSlide() {
-        this.shortcuts.children[this.currentSlide].classList.remove('active');
         this.currentSlide = this.currentSlide <= 0 ? this.slides - 1 : this.currentSlide - 1;
-        this.shortcuts.children[this.currentSlide].classList.add('active');
         this.moveSlides();
     };
 
