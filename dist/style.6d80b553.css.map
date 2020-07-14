@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/style.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACI;EACA;EACA","file":"style.6d80b553.css","sourceRoot":"..","sourcesContent":[".slider {\n    width: 100%;\n    height: 400px;\n        background-size: cover;\n        background-position: center;\n        background-repeat: no-repeat;\n}"]}
